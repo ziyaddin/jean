@@ -1,0 +1,7 @@
+{Jean Packages List}
+
+http://github.com/ziyaddin/xampp
+http://github.com/ziyaddin/git-loader
+http://github.com/samedli/bacys
+
+{END}
