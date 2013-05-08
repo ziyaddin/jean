@@ -1,0 +1,142 @@
+#!/bin/sh
+#
+# Script Name: Jean
+# Script Description: Missing Shell Package Manager For Linux
+# Script Author: Ziyaddin Sadigov
+# Script URL: http://github.com/ziyaddin/jean
+# Author URL: http://twitter.com/zsadigov
+#
+
+#---MAIN-VARIABLES---#
+BASEDIR="/usr/local/bin/jean"
+
+CONF_TEXT="#script made by jean
+
+URL=''
+
+install(){
+  curl -LOk "\$URL"
+}
+
+ if[ "\$1"=='install' ]
+   then
+   install;
+ fi
+"
+
+#---ENTER-LOCAL-FOLDER---#
+
+cd "$BASEDIR"
+
+#---ENTER-LOCAL-FOLDER---#
+
+#---COMMANDS---#
+
+#init command
+init(){
+
+  cd init
+  touch "$PACKNAME.sh"
+  chmod +x "$PACKNAME.sh"
+  echo "$CONF_TEXT" > "$PACKNAME.sh"
+  cd ..
+}
+
+#install command
+install(){
+
+	echo "Installation starts!"
+	for i in $(cat packages.txt | grep -w $PACKNAME) ; do
+      
+      cd packages
+      echo $i
+      curl -LOk "$i/archive/master.zip" 
+      unzip -q `basename /$i/archive/master.zip`
+      rm `basename packages/$i/archive/master.zip`
+      ls | grep -i `basename $i-master` | xargs -I {} mv {} `basename $i`
+      cd -
+      
+    done
+}
+
+#update command
+update(){
+  echo 'Updating Packages List...'
+  curl -LOk "http://raw.github.com/ziyaddin/xampp/master/README.md"
+  echo 'Updated!'
+}
+
+#search command
+search(){
+  for line in $(cat packages.txt | grep -w "http") ; do
+
+   echo $line;
+
+  done
+}
+
+#help command
+help(){
+
+	if [ "`which banner`" = "/usr/bin/banner" ]; then
+		banner jean
+	else
+		echo "You haven't banner command"
+	fi
+}
+
+#---COMMAND-PROCESS---#
+if [ $1 ] 
+then
+  case "$1" in
+  "init")
+    if [ "$2" ]; 
+    then
+
+    #$2 as packname
+    PACKNAME="$2"
+
+    if [ -f $BASEDIR/init/$PACKNAME.sh ]; 
+     then
+        echo "File $PACKNAME is already exists!"
+      else
+        init;
+    fi
+    else
+      echo "Please, enter file name for initialization"
+    fi
+  ;;
+  "install")
+
+    if [ "$2" ]; 
+    then
+
+    #$2 as packname
+    PACKNAME="$2"
+
+    if [ -d $BASEDIR/packages/$PACKNAME ]; 
+     then
+
+      echo "\033[32m Already exists. Are you sure you want to overwrite?\033[0m"
+
+      else
+      install;
+    fi
+    else
+    echo "\033[31mPlease, enter package name!\033[0m"
+    echo "write as: jean install <package-name>"
+    fi
+  ;;
+  "update")
+    update;
+  ;;
+  "search")
+    search;
+  ;;
+  *)
+    help;
+  ;;
+  esac
+else
+  help;
+fi
