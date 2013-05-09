@@ -13,8 +13,6 @@
 
 ## Setup
 
-Installer script is currently in development process.
-
 <p>Open your <code>Terminal</code> and type:</p>
 ```bash
 cd jean
