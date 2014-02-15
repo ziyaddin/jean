@@ -15,6 +15,7 @@
 
 <p>Open your <code>Terminal</code> and type:</p>
 ```bash
+git clone git@github.com:ziyaddin/jean.git
 cd jean
 sh installer
 ```
