@@ -6,42 +6,35 @@
 # Author URL: http://twitter.com/zsadigov
 #
 
-FILE="jean"
-LIST="packages.txt"
+FILE="jean";
+LIST="packages.txt";
 
-if [ -f $FILE ] && [ -f $LIST ];
-then
-	echo "\033[32mFile $FILE found.\033[0m"
+if [ -f $FILE ] && [ -f $LIST ]; then
+    echo "\033[32mFile $FILE found.\033[0m";
 
-	#starting main process...
-   	while true
-		do
-			echo -n "Please confirm (y or n) :"
-			read CONFIRM
+    # starting main process...
+    while true; do
+        echo -n "Please confirm (y or n) :";
+        read CONFIRM;
 
-			case $CONFIRM in
-			y|Y|YES|yes|Yes)
-				
-				#copying jean file to /usr/bin
-				sudo cp jean /usr/bin/jean
-				sudo mkdir /usr/local/bin/jean
-				sudo mkdir /usr/local/bin/jean/init
-				sudo mkdir /usr/local/bin/jean/packages
-				sudo cp packages.txt /usr/local/bin/jean/packages.txt
-				break
-				;;
-	
-			n|N|no|NO|No)
-				echo "\033[31m Aborting\033[0m"
-				exit
-				;;
-	
-			*) echo "\033[36m Please enter only y or n!\033[0m"
-			esac
-		done
-	echo "\033[32m Installation of jean done.\033[0m"
-
+        case $CONFIRM in
+        y|Y|YES|yes|Yes)
+            #copying jean file to /usr/bin
+            sudo cp jean /usr/bin/jean;
+            sudo mkdir /usr/local/bin/jean;
+            sudo mkdir /usr/local/bin/jean/init;
+            sudo mkdir /usr/local/bin/jean/packages;
+            sudo cp packages.txt /usr/local/bin/jean/packages.txt;
+            break;
+            ;;
+        n|N|no|NO|No)
+            echo "\033[31m Aborting\033[0m";
+            exit;
+            ;;
+        *) echo "\033[36m Please enter only y or n!\033[0m";
+        esac
+    done
+    echo "\033[32m Installation of jean done.\033[0m";
 else
-   	echo "\033[31mFile $FILE does not exist. Please, try again!\033[0m"
+    echo "\033[31mFile $FILE does not exist. Please, try again!\033[0m";
 fi
-
