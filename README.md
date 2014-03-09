@@ -56,3 +56,7 @@ jean help
 MIT licensed
 
 Copyright (C) 2013 Ziyaddin Sadigov, [@zsadigov](http://twitter.com/zsadigov)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ziyaddin/jean/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
