@@ -2,12 +2,12 @@
 >Missing Shell Package Manager For Linux
 
 <pre>
-      #  ######    ##    #    #
-      #  #        #  #   ##   #
-      #  #####   #    #  # #  #
-      #  #       ######  #  # #
- #    #  #       #    #  #   ##
-  ####   ######  #    #  #    #
+   _                  
+  (_) ___  __ _ _ __  
+  | |/ _ \/ _` | '_ \ 
+  | |  __/ (_| | | | |
+ _/ |\___|\__,_|_| |_|
+|__/                  
 </pre>
 
 ## Setup
@@ -23,6 +23,7 @@ sh installer
 ## Install Packages
 
 <p></p>
+
 ```bash
 jean install <package-name>
 ```
@@ -30,6 +31,7 @@ jean install <package-name>
 ## Initialize Scripts
 
 <p></p>
+
 ```bash
 jean init <script-name>
 ```
