@@ -1,5 +1,4 @@
-#Jean
-![Terminal](terminal.png)
+# Jean
 >Missing Shell Package Manager For Linux
 
 <pre>
@@ -14,6 +13,7 @@
 ## Setup
 
 <p>Open your <code>Terminal</code> and type:</p>
+
 ```bash
 git clone git@github.com:ziyaddin/jean.git
 cd jean
@@ -37,6 +37,7 @@ jean init <script-name>
 ## Search Packages
 
 <p></p>
+
 ```bash
 jean search
 ```
@@ -46,6 +47,7 @@ It will search packages in <code>packages.txt</code>
 ## Help
 
 <p></p>
+
 ```bash
 jean help
 ```
@@ -55,8 +57,5 @@ jean help
 
 MIT licensed
 
-Copyright (C) 2013 Ziyaddin Sadigov, [@zsadigov](http://twitter.com/zsadigov)
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ziyaddin/jean/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+Copyright (C) 2017 Ziyaddin Sadigov, [@zsadigov](http://twitter.com/zsadigov)
 
